@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <title>Frontend Mentor | Clipboard landing page</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;600&display=swap');
+
+    :root {
+      /* Primary Colors */
+      --Strong-Cyan: hsl(171, 66%, 44%);
+      --Light-Blue: hsl(233, 100%, 69%);
+
+      /* Secondary Colors */
+      --Dark-Grayish-Blue: hsl(210, 10%, 33%);
+      --Grayish-Blue: hsl(201, 11%, 66%);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    figure, img {
+      width: 100%;
+      height: 100%;
+    }
+
+    body {
+      min-height: 100vh;
+      min-width: 1440px;
+      font-family: 'Bai Jamjuree', sans-serif;
+      font-size: 18px;
+    }
+
+/* Main Div */
+    #main {
+      background-image: url(/images/bg-header-desktop.png);
+      background-size: cover;
+      padding-top: 100px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .main-logo {
+      width: 5%;
+      padding-bottom: 25px;
+    }
+
+    .main-text {
+      max-width: auto;
+      text-align: center;
+    }
+
+    .main-text h1 {
+      width: auto;
+      color: var(--Dark-Grayish-Blue);
+    }
+
+    .main-text p {
+      font-size: 16px;
+      max-width: 550px;
+      padding-top: 10px;
+      padding-bottom: 25px;
+      color: var(--Grayish-Blue);
+      font-weight: 400;
+    }
+
+    .btn-ios {
+      background-color: var(--Strong-Cyan);
+      border: none;
+      padding: 10px 20px 10px 20px;
+      color: white;
+      border-radius: 20px;
+      font-weight: 600;
+    }
+
+    .btn-ios:hover {
+      background-color: hsl(171, 66%, 55%);
+      cursor: pointer;
+    }
+
+    .btn-mac { 
+      background-color: var(--Light-Blue);
+      border: none;
+      padding: 10px 20px 10px 20px;
+      color: white;
+      border-radius: 20px;
+      font-weight: 600;
+    }
+
+    .btn-mac:hover {
+      background-color: hsl(233, 100%, 75%);
+      cursor: pointer;
+    }
+/* Main Div */
+
+/* Track Div */
+
+    #track {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding-top: 100px;
+      padding-bottom: 50px;
+    }
+
+    .track-text h2 {
+      max-width: auto;
+      color: var(--Dark-Grayish-Blue);
+      font-weight: 600;
+      padding-bottom: 15px;
+    }
+
+    .track-text p {
+      font-size: 16px;
+      max-width: 600px;
+      color: var(--Grayish-Blue);
+    }
+/* Track Div */
+
+/* Features Div */
+
+    #features {
+      display: flex;
+      align-items: center;
+    }
+
+    .pc-img {
+      width: 40%;
+      margin-left: -25px;
+    }
+
+    .feat {
+      max-width: auto;
+      padding-left: 100px;
+    }
+
+    .feat h3 {
+      color: var(--Dark-Grayish-Blue);
+      padding-bottom: 5px;
+    }
+
+    .feat p {
+      color: var(--Grayish-Blue);
+      font-size: 16px;
+      max-width: 350px;
+    }
+
+    .qsearch {
+      padding-bottom: 25px;
+    }
+
+    .isync {
+      padding-bottom: 25px;
+    }
+
+/* Features Div */
+
+/* Clipboard Div */ 
+
+    #clipboard {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .clipboard-text {
+      text-align: center;
+      padding-bottom: 50px;
+    }
+
+    .clipboard-text h2 {
+      color: var(--Dark-Grayish-Blue);
+      padding-bottom: 10px;
+    }
+
+    .clipboard-text p {
+      color: var(--Grayish-Blue);
+      font-size: 16px;
+      max-width: 600px;
+    }
+
+    .devices-images {
+      width: 50%;
+      padding-bottom: 50px;
+    }
+
+/* Clipboard Div */ 
+
+/* Workflow Div */
+
+    #workflow {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding-bottom: 150px;
+    }
+
+    .wf-text h2 {
+      color: var(--Dark-Grayish-Blue);
+    }
+
+    .wf-text p {
+      padding-top: 15px;
+      color: var(--Grayish-Blue);
+      font-size: 16px;
+    }
+
+    .wf-feats {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 50px;
+    }
+
+    .wf-feats figure { width: 10%; }
+
+    .blacklist {
+      max-width: 300px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .blacklist h3 { color: var(--Dark-Grayish-Blue); padding-bottom: 10px; }
+
+    .blacklist p { color: var(--Grayish-Blue); font-size: 14px; }
+
+    .text { 
+      max-width: 300px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center; 
+    }
+
+    .text h3 { color: var(--Dark-Grayish-Blue); padding-bottom: 10px;}
+
+    .text p { color: var(--Grayish-Blue); font-size: 14px; }
+
+    .preview {
+      max-width: 300px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .preview h3 { color: var(--Dark-Grayish-Blue); padding-bottom: 10px;}
+
+    .preview p { color: var(--Grayish-Blue); font-size: 14px; }
+
+/* Workflow Div */
+
+/* Companies Div */
+
+    #companies { display:flex; justify-content: space-around; margin-left: 100px; margin-right: 100px; padding-bottom: 100px;}
+
+    #companies figure { width: 8%; }
+
+/* Companies Div */
+
+/* Last Div */
+
+    #last { display: flex; flex-direction: column; justify-content: center; align-items: center; padding-bottom: 100px; }
+
+    .last-text { text-align: center; padding-bottom: 25px;}
+
+    .last-text h2 { color: var(--Dark-Grayish-Blue); padding-bottom: 10px; }
+
+    .last-text p { color: var(--Grayish-Blue); font-size: 16px; max-width: 550px;}
+
+      /* Footer */
+    footer { display: flex; justify-content: space-around; background-color: hsl(180, 14%, 96%); padding: 15px; align-items: center;}
+
+    footer figure { width: 3%; }
+
+    .options { font-size: 14px; color: var(--Dark-Grayish-Blue); margin-left: -200px;}
+    .options p:hover { cursor: pointer; color: var(--Strong-Cyan); }
+    .options-1 { display: flex; gap: 100px; padding-bottom: 10px;}
+    .options-2 { display: flex; gap: 60px;}
+
+    .sm-logos i { padding: 5px;}
+    .sm-logos i:hover { cursor: pointer; color: var(--Strong-Cyan);}
+/* Footer */
+
+/* Responsiveness */
+
+/* Tablet */
+@media screen and (max-width: 900px) {
+  body {
+    min-width: 750px;
+    max-width: 900px;
+    margin: auto;
+    display: block;
+  }
+
+  #main {
+    background-image: url(images/bg-header-desktop.png);
+    background-size: cover;
+  }
+
+  .main-logo {width: 20%;}
+  .main-text {max-width: 750px;}
+
+  .track-text {max-width: 750px;}
+
+  #features {display: flex; flex-direction: column; justify-content: center; margin: auto; max-width: 750px; text-align: center; padding-bottom: 50px;}
+  .pc-img {width: 600px; margin: auto;}
+  .feat {max-width: 750px; margin: auto; padding: 0; padding-top: 10px; }
+
+  #clipboard {display: flex; flex-direction: column; justify-content: center; margin: auto; max-width: 750px; text-align: center;}
+  .devices-images {width: 600px;}
+
+  #workflow {display: flex; flex-direction: column; justify-content: center; margin: auto; max-width: 750px; text-align: center;}
+  .wf-feats {display: flex; flex-direction: column; gap: 30px;}
+
+  #companies {display: flex; flex-direction: column; justify-content: center; text-align: center; margin: auto; max-width: 750px;}
+  #companies figure {width: 200px; margin: auto; padding: 0; padding-bottom: 50px;}
+
+  #last {max-width: 750px; margin: auto;}
+
+  footer {max-width: auto; margin: auto; padding: 5px 20px 5px 20px;}
+  .options {margin: auto; font-size: 12px;}
+  .options-1 {gap: 30px; padding-bottom: 5px;}
+  .options-2 {gap: 15px;}
+}
+/* Mobile */
+@media screen and (max-width: 450px) {
+  body {
+    min-width: 375px;
+    max-width: 450px;
+    margin: auto;
+    display: block;
+  }
+
+  #main {
+    background-image: url(images/bg-header-mobile.png);
+    background-size: cover;
+  }
+
+  .main-logo {width: 20%;}
+  .main-text {max-width: 370px;}
+
+  .track-text {max-width: 370px;}
+
+  #features {display: flex; flex-direction: column; justify-content: center; margin: auto; max-width: 370px; text-align: center; padding-bottom: 50px;}
+  .pc-img {width: 300px; margin: auto;}
+  .feat {max-width: 370px; margin: auto; padding: 0; padding-top: 10px; }
+
+  #clipboard {display: flex; flex-direction: column; justify-content: center; margin: auto; max-width: 370px; text-align: center;}
+  .devices-images {width: 300px;}
+
+  #workflow {display: flex; flex-direction: column; justify-content: center; margin: auto; max-width: 370px; text-align: center;}
+  .wf-feats {display: flex; flex-direction: column; gap: 30px;}
+
+  #companies {display: flex; flex-direction: column; justify-content: center; text-align: center; margin: auto; max-width: 370px;}
+  #companies figure {width: 100px; margin: auto; padding: 0; padding-bottom: 50px;}
+
+  #last {max-width: 370px; margin: auto;}
+
+  footer {max-width: auto; margin: auto; padding: 5px;}
+  .options {margin: auto; font-size: 12px;}
+  .options-1 {gap: 30px; padding-bottom: 5px;}
+  .options-2 {gap: 15px;}
+}
+@media screen and (max-width: 370px) {
+  body {
+    min-width: 320px;
+    max-width: 370px;
+    margin: auto;
+    display: block;
+  }
+
+  #main {
+    background-image: url(images/bg-header-mobile.png);
+    background-size: cover;
+  }
+
+  .main-logo {width: 20%;}
+  .main-text {max-width: 300px;}
+
+  .track-text {max-width: 300px;}
+
+  #features {display: flex; flex-direction: column; justify-content: center; margin: auto; max-width: 300px; text-align: center; padding-bottom: 50px;}
+  .pc-img {width: 300px; margin: auto;}
+  .feat {max-width: 300px; margin: auto; padding: 0; padding-top: 10px; }
+
+  #clipboard {display: flex; flex-direction: column; justify-content: center; margin: auto; max-width: 300px; text-align: center;}
+  .devices-images {width: 300px;}
+
+  #workflow {display: flex; flex-direction: column; justify-content: center; margin: auto; max-width: 300px; text-align: center;}
+  .wf-feats {display: flex; flex-direction: column; gap: 30px;}
+
+  #companies {display: flex; flex-direction: column; justify-content: center; text-align: center; margin: auto; max-width: 300px;}
+  #companies figure {width: 100px; margin: auto; padding: 0; padding-bottom: 50px;}
+
+  #last {max-width: 320px; margin: auto;}
+
+  footer {max-width: auto; margin: auto; padding: 5px;}
+  .options {margin: auto; font-size: 12px;}
+  .options-1 {gap: 30px; padding-bottom: 5px;}
+  .options-2 {gap: 15px;}
+}
+  </style>
+  </head>
+<body>
+<!-- Main Div -->
+  <main>
+    <div id="main">
+      <figure class="main-logo">
+        <img src="images/logo.svg" alt="logo">
+      </figure>
+      <div class="main-text">
+        <h1>A history of everything you copy</h1>
+        <p>Clipboard allows you to track and organize everything you copy. Instantly access your clipboard on all your devices.</p>
+      </div>
+      <div class="main-button">
+        <button class="btn-ios">Download for iOS</button>
+        <button class="btn-mac">Download for Mac</button>
+      </div>
+      </div>
+    </div>
+  </main>
+
+<!-- Track Div -->
+  <section id="track">
+    <div class="track-text">
+      <h2>Keep track of your snippets</h2>
+      <p>Clipboard instantly stores any item yoy copy in the cloud, meaning you can access your snippets
+        immediately on all your devices. Our Mac and iOS apps will help you organize everything.
+      </p>
+    </div>
+  </section>
+
+<!-- Features Div -->
+  <section id="features">
+    <figure class="pc-img">
+      <img src="images/image-computer.png" alt="computer image">
+    </figure>
+    <div class="feat">
+      <div class="qsearch">
+        <h3>Quick Search</h3>
+        <p>Easily search your snippets by content category, web address, application, and more.</p>
+      </div>
+      <div class="isync">
+        <h3>iCloud Sync</h3>
+        <p>Instantly saves and syncs snippets across all your devices.</p>
+      </div>
+      <div class="chistory">
+        <h3>Complete History</h3>
+        <p>Retrieve any snippets from the first moment you started using the app.</p>
+      </div>
+    </div>
+  </section>
+
+<!-- Clipboard Div -->
+  <section id="clipboard">
+    <div class="clipboard-text">
+      <h2>Access Clipboard anywhere</h2>
+      <p>Whether you're on the go, or at your computer, you can access all your Clipboard snippets in a few simple clicks.</p>
+    </div>
+    <figure class="devices-images">
+      <img src="images/image-devices.png" alt="devices image">
+    </figure>
+  </section>
+
+<!-- Workflox Div -->
+  <section id="workflow">
+    <div class="wf-text">
+      <h2>Supercharge your workflox</h2>
+      <p>We've got the tools to boost your productivity.</p>
+    </div>
+    <div class="wf-feats">
+      <div class="blacklist">
+        <figure class="bl-img">
+          <img src="images/icon-blacklist.svg" alt="blacklist icon">
+        </figure>
+        <h3>Create blacklists</h3>
+        <p>Ensure sensitive informatior never makes its way to your clipboard by excluding certain sources.</p>
+      </div>
+      <div class="text">
+        <figure class="text-img">
+          <img src="images/icon-text.svg" alt="text icon">
+        </figure>
+        <h3>Plain text snippets</h3>
+        <p>Remove unwanted formatting from copied text for a consistent look.</p>
+      </div>
+      <div class="preview">
+        <figure class="prev-img">
+          <img src="images/icon-preview.svg" alt="preview icon">
+        </figure>
+        <h3>Sneak preview</h3>
+        <p>Quick preview of all snippets on your Clipboard for easy access.</p>
+      </div>
+    </div>
+  </section>
+  
+<!-- Companies Div -->
+  <section id="companies">
+    <figure class="google">
+      <img src="images/logo-google.png" alt="google logo">
+    </figure>
+    <figure class="ibm">
+      <img src="images/logo-ibm.png" alt="IBM logo">
+    </figure>
+    <figure class="microsoft">
+      <img src="images/logo-microsoft.png" alt="microsoft logo">
+    </figure>
+    <figure class="hp">
+      <img src="images/logo-hp.png" alt="hp logo">
+    </figure>
+    <figure class="vector">
+      <img src="images/logo-vector-graphics.png" alt="vector logo">
+    </figure>
+  </section>
+
+<!-- Last Div -->
+  <section id="last">
+    <div class="last-text">
+      <h2>Clipboard for iOS and Mac OS</h2>
+      <p>Available for free on the App Store. Download for Max or iOS, sync with iCloud and you're ready to start adding to your clipboard.</p>
+    </div>
+    <div class="last-btn">
+      <button class="btn-ios">Download for iOS</button>
+      <button class="btn-mac">Download for Mac</button>
+    </div>
+  </section>
+
+<!-- Footer -->
+  <footer>
+    <figure class="logo-footer">
+      <img src="images/logo.svg" alt="logo">
+    </figure>
+    <div class="options">
+    <div class="options-1">
+      <p>FAQs</p>
+      <p>Privacy Policy</p>
+      <p>Install Guide</p>
+    </div>
+    <div class="options-2">
+      <p>Contact Us</p>
+      <p>Press Kit</p>
+    </div>
+  </div>
+    <div class="sm-logos">
+      <i class="fa-brands fa-square-facebook"></i>
+      <i class="fa-brands fa-twitter"></i>
+      <i class="fa-brands fa-instagram"></i>
+    </div>
+  </footer>
+</body>
+</html>
